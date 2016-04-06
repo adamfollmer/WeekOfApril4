@@ -11,32 +11,41 @@ namespace CustomStringInterface
         static void Main(string[] args)
         {
             //SystemString Tests
-            //SystemString test1 = new SystemString("test");
+            SystemString test1 = new SystemString("the");
             // test1.Insert(2, "adam");
-            // Console.WriteLine(test1);
+            Console.WriteLine(test1);
 
             //SystemArrayString Tests
-            //char[] test = { 'A', 'D', 'A','M','F' };
-            //SystemArrayString test2 = new SystemArrayString(test);
+            SystemArrayString test2 = new SystemArrayString("Hello");
             //test2.Remove(3, 1);
-            //Console.WriteLine(test2);
+            Console.WriteLine(test2.ToString());
+            Console.WriteLine(test2.Length());
 
             //SystemLinkedListString Tests
-            LinkedList<char> test = new LinkedList<char>();
-            test.AddLast('D');
-            test.AddLast('A');
-            test.AddLast('M');
-            test.AddFirst('A');
-            SystemLinkedListString test3 = new SystemLinkedListString(test);
+            SystemLinkedListString test3 = new SystemLinkedListString("Adam");
             //string printTest3 = test3.ToString();
             //test3.Insert(0, "fo");
             //test3.Remove(1, 3);
-            //Console.WriteLine(test3.ToString());
+            Console.WriteLine(test3.ToString());
             Console.WriteLine(test3.Length());
+            //Console.WriteLine(test3.Length());
 
+            //CustomLinkedList
+            CustomLinkedListString test4 = new CustomLinkedListString("Follmer");
+            //test4.Insert(4, "fo"); 
+            //test4.Remove(4, 0);
+            Console.WriteLine(test4.ToString());
 
-
-
+            //Systems.Collections.SortedList
+            SortedList<int, ICustomString> sortedStringList = new SortedList<int, ICustomString>();
+            sortedStringList.Add(test1.Length(), test1);
+            sortedStringList.Add(test2.Length(), test2);
+            sortedStringList.Add(test3.Length(), test3);
+            sortedStringList.Add(test4.Length(), test4);
+            for (int i = 0; i < sortedStringList.Count; i++)
+            {
+                Console.WriteLine("{0}. {1}", i, sortedStringList.ElementAt(i));
+            }
             
             Console.ReadLine();
 

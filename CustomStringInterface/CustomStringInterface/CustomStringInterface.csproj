@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomLinkedList.cs" />
     <Compile Include="CustomLinkedListString.cs" />
     <Compile Include="CustomString.cs" />
     <Compile Include="Program.cs" />

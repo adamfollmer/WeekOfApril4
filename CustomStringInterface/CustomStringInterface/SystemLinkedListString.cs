@@ -8,10 +8,14 @@ namespace CustomStringInterface
 {
     class SystemLinkedListString : ICustomString
     {
-        LinkedList<char> baseLinkedList;
-        public SystemLinkedListString (LinkedList<char> baseLinkedList)
+        LinkedList<char> baseLinkedList = new LinkedList<char>();
+        public SystemLinkedListString (string toConvert)
         {
-            this.baseLinkedList = baseLinkedList;
+            for (int i = 1; i < toConvert.Length; i++)
+            {
+                baseLinkedList.AddLast(toConvert[i]);
+            }
+            baseLinkedList.AddFirst(toConvert[0]);
         }
         public override string ToString()
         {

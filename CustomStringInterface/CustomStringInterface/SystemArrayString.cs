@@ -9,9 +9,9 @@ namespace CustomStringInterface
     class SystemArrayString : ICustomString
     {
         char[] baseArray;
-        public SystemArrayString(char[] baseArray)
+        public SystemArrayString(string toConvert)
         {
-            this.baseArray = baseArray;
+            baseArray = toConvert.ToCharArray();
         }
         public override string ToString()
         {
