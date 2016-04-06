@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomStringInterface
 {
-    class SystemArrayString : ICustomString
+    public class SystemArrayString : ICustomString
     {
         char[] baseArray;
         public SystemArrayString(string toConvert)
@@ -57,7 +57,7 @@ namespace CustomStringInterface
             {
                 removedArray[i] = baseArray[i];
             }
-            if (startIndex + numCharsToRemove == baseArray.Length)//Checking to see if items removed ends the list
+            if (startIndex + numCharsToRemove == baseArray.Length)
             {
                 baseArray = removedArray;
             }

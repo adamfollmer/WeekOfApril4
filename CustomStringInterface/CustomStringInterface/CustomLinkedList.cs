@@ -58,6 +58,10 @@ namespace CustomStringInterface
         {
             get { return tail; }
         }
+        public List<Node<T>> List
+        {
+            get { return list; }
+        }
         public void AddFirst(T value)
         {
             Node<T> headtoBe = new Node<T>(value);
@@ -171,11 +175,11 @@ namespace CustomStringInterface
                     yield return nextNode.Value;
                     nextNode = nextNode.Next;
                 }
-                yield return nextNode.Value; //only two or final node
+                yield return nextNode.Value;
             }
             else
             {
-                yield return head.Value; //Only head scenario
+                yield return head.Value;
             }
         }
         public int Count()

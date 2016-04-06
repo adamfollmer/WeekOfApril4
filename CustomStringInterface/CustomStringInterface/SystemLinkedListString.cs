@@ -9,7 +9,7 @@ namespace CustomStringInterface
     class SystemLinkedListString : ICustomString
     {
         LinkedList<char> baseLinkedList = new LinkedList<char>();
-        public SystemLinkedListString (string toConvert)
+        public SystemLinkedListString(string toConvert)
         {
             for (int i = 1; i < toConvert.Length; i++)
             {
@@ -27,7 +27,7 @@ namespace CustomStringInterface
             return toString.ToString();
         }
         public void Insert(int startIndex, string stringToInsert)
-            //Still am bugging out at the end of the linkedList
+        //Still am bugging out at the end of the linkedList
         {
             char[] charString = stringToInsert.ToCharArray();
             LinkedListNode<char> indexNode;
@@ -38,10 +38,22 @@ namespace CustomStringInterface
                 holdNode = indexNode.Next;
                 indexNode = holdNode;
             }
-            foreach (char character in charString)
+            if (startIndex == baseLinkedList.Count())
             {
-                baseLinkedList.AddBefore(indexNode, character);
+                foreach (char character in charString)
+                {
+                    baseLinkedList.AddAfter(baseLinkedList.Last, character);
+                }
+
             }
+            else
+            {
+                foreach (char character in charString)
+                {
+                    baseLinkedList.AddBefore(indexNode, character);
+                }
+            }
+
         }
 
         public int Length()
@@ -51,23 +63,22 @@ namespace CustomStringInterface
 
         public void Remove(int startIndex, int numCharsToRemove)
         {
-            //Defenseless code to bad input, but otherwise okay
             LinkedListNode<char> indexNode;
             LinkedListNode<char> holdNode;
             indexNode = baseLinkedList.First;
-            for (int i=0; i < startIndex; i++)
+            for (int i = 0; i < startIndex; i++)
             {
                 holdNode = indexNode.Next;
                 indexNode = holdNode;
             }
-            for (int i=0; i < numCharsToRemove; i++)
+            for (int i = 0; i < numCharsToRemove; i++)
             {
                 holdNode = indexNode;
                 holdNode = holdNode.Next;
                 baseLinkedList.Remove(indexNode);
                 indexNode = holdNode;
             }
-            
+
         }
     }
 }

@@ -17,40 +17,54 @@ namespace CustomStringInterface
 
             //SystemArrayString Tests
             SystemArrayString test2 = new SystemArrayString("Hello");
-            //test2.Remove(3, 1);
             Console.WriteLine(test2.ToString());
-            Console.WriteLine(test2.Length());
+            //test2.Insert(0, "CHECK"); //inserting at far left
+            //test2.Insert(5, "CHECK"); //inserting at far right
+            //test2.Insert(2, "CHECK"); //inserting in the middle
+            //test2.Remove(3, 2); //removing final letters
+            //test2.Remove(0, 2); //removing at start
+            //test2.Remove(0, 5); //removing all letters
+            //test2.Remove(1, 3); //removing some letters
+            Console.WriteLine(test2.ToString());
 
             //SystemLinkedListString Tests
             SystemLinkedListString test3 = new SystemLinkedListString("Adam");
-            //string printTest3 = test3.ToString();
-            //test3.Insert(0, "fo");
-            //test3.Remove(1, 3);
             Console.WriteLine(test3.ToString());
-            Console.WriteLine(test3.Length());
+            //test3.Insert(0, "CHECK"); //inserting at far left
+            //test3.Insert(4, "CHECK"); //inserting at far right
+            //test3.Insert(2, "CHECK"); //inserting in the middle
+            //test3.Remove(4, 5);
+            //test3.Remove(2, 2); //removing final letters
+            //test3.Remove(0, 2); //removing at start
+            //test3.Remove(0, 4); //removing all letters
+            //test3.Remove(1, 3); //removing some letters;
+            Console.WriteLine(test3.ToString());
             //Console.WriteLine(test3.Length());
 
             //CustomLinkedList
             CustomLinkedListString test4 = new CustomLinkedListString("Follmer");
-            //test4.Insert(4, "fo"); 
-            //test4.Remove(4, 0);
+            Console.WriteLine(test4.ToString());
+            //test4.Insert(0, "CHECK"); //inserting at far left
+            //test4.Insert(7, "CHECK"); //inserting at far right
+            //test4.Insert(2, "CHECK"); //inserting in the middle
+            //test4.Remove(5, 2); //removing final letters
+            //test4.Remove(0, 2); //removing at start
+            //test4.Remove(0, 7); //removing all letters
+            //test4.Remove(1, 3); //removing some letters;
             Console.WriteLine(test4.ToString());
 
             //Systems.Collections.SortedList
-            SortedList<int, ICustomString> sortedStringList = new SortedList<int, ICustomString>();
-            sortedStringList.Add(test1.Length(), test1);
-            sortedStringList.Add(test2.Length(), test2);
-            sortedStringList.Add(test3.Length(), test3);
-            sortedStringList.Add(test4.Length(), test4);
-            for (int i = 0; i < sortedStringList.Count; i++)
-            {
-                Console.WriteLine("{0}. {1}", i, sortedStringList.ElementAt(i));
-            }
-            
+            //SortedList<int, ICustomString> sortedStringList = new SortedList<int, ICustomString>();
+            //sortedStringList.Add(test1.Length(), test1);
+            //sortedStringList.Add(test2.Length(), test2);
+            //sortedStringList.Add(test3.Length(), test3);
+            //sortedStringList.Add(test4.Length(), test4);
+            //for (int i = 0; i < sortedStringList.Count; i++)
+            //{
+            //    Console.WriteLine("{0}. {1}", i, sortedStringList.ElementAt(i));
+            //}
+
             Console.ReadLine();
-
-
-            //test + adam = teadamst
         }
     }
 }

@@ -19,6 +19,10 @@ namespace CustomStringInterface
         }
         public override string ToString()
         {
+            if (baseLinkedList.List.Count == 0)
+            {
+                return "";
+            }
             StringBuilder toString = new StringBuilder();
             foreach (char character in baseLinkedList)
             {
