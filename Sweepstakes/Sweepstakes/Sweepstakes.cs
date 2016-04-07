@@ -14,24 +14,43 @@ namespace Sweepstakes
         {
             this.name = name;
         }
+        public string Name
+        {
+            get { return name; }
+        }
         public void RegisterContestant(Contestant contestant)
         {
-            entryPool.Add(contestant, getRandomNumber(100000, 999999));
+            if (CheckIfEntered(contestant) == false)
+            {
+                entryPool.Add(contestant, GetRandomNumber(100000, 999999));
+            }
         }
-        public int getRandomNumber(int low, int high)
+        public bool CheckIfEntered(Contestant contestant)
+        {
+            if (entryPool.ContainsKey(contestant))
+            {
+                Console.WriteLine("I'm sorry, {0}, you've already registered for this contest", contestant.Name);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public int GetRandomNumber(int low, int high)
         {
             Random random = new Random(Guid.NewGuid().GetHashCode());
             int number = random.Next(low, high);
             if (entryPool.ContainsValue(number))
             {
-                return getRandomNumber(low, high);
+                return GetRandomNumber(low, high);
             }
             return number;
         }
         public string PickWinner()
         {
             int entryPoolLength = entryPool.Count;
-            int randomNumber = getRandomNumber(0, entryPoolLength);
+            int randomNumber = GetRandomNumber(0, entryPoolLength);
             KeyValuePair<Contestant, int> winner = entryPool.ElementAt(randomNumber);
             return winner.Key.Name;
         }

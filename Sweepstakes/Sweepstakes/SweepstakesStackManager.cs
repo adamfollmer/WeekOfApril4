@@ -13,7 +13,10 @@ namespace Sweepstakes
         {
             return stackManager.Pop();
         }
-
+        public Sweepstakes PeekNext()
+        {
+            return stackManager.Peek();
+        }
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             stackManager.Push(sweepstakes);
