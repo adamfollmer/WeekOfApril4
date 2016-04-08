@@ -8,5 +8,6 @@ namespace AdvancedCalculator
 {
     public interface IDivider
     {
+        int? Divide();
     }
 }

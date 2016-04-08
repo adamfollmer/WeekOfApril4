@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Adder.cs" />
     <Compile Include="Calculator.cs" />
+    <Compile Include="CalculatorControl.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="Divider.cs" />
     <Compile Include="Exponenter.cs" />
@@ -77,6 +78,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UserInput\UserInput.csproj">
+      <Project>{0119723d-ef38-406d-a3b6-584a8e3383d5}</Project>
+      <Name>UserInput</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,5 +8,6 @@ namespace AdvancedCalculator
 {
     public interface IMultiplier
     {
+        int? Multiply();
     }
 }

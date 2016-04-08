@@ -8,6 +8,6 @@ namespace AdvancedCalculator
 {
     public interface IAdder
     {
-        int Add (int first, int second);
+        int? Add ();
     }
 }
